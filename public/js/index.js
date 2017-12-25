@@ -10,12 +10,21 @@ socket.on('disconnect',function (){
 
 socket.on('newMessage',function (message){
   console.log('Got new Message',message);
-  var li=jQuery('<li></li');
+  var li=jQuery('<li></li>');
   li.text(`${message.from} : ${message.text}`);
 
   jQuery('#messages').append(li);
 });
 
+socket.on('newLocationMessage',function (message) {
+  var li=$('<li></li>');
+  var a =$('<a target="_blank">My Current Location</a>');
+
+  li.text(`${message.from} :`);
+  a.attr('href',message.url);
+  li.append(a);
+  $('#messages').append(li);
+});
 
 jQuery('#message-form').on('submit',function(e){
   e.preventDefault();
@@ -25,5 +34,21 @@ jQuery('#message-form').on('submit',function(e){
     text:jQuery('[name=message]').val()
   },function (){
 
+  });
+});
+
+var locationButton=$('#send-location');
+locationButton.on('click',function(){
+  if (!navigator.geolocation){
+    return console.log('Geoloaction not supported by your Browser');
+  }
+
+  navigator.geolocation.getCurrentPosition(function(position){
+    socket.emit('createLocationMessage',{
+      latitude:position.coords.latitude,
+      longitude:position.coords.longitude
+    });
+  },function (){
+    alert('Unable to fetch Location');
   });
 });
