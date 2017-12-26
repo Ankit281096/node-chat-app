@@ -18,11 +18,6 @@ socket.on('newMessage',function (message){
   });
 
   $('#messages').append(html);
-  //
-  // var li=jQuery('<li></li>');
-  // li.text(`${message.from} ${formattedTime} : ${message.text}`);
-  //
-  // jQuery('#messages').append(li);
 });
 
 socket.on('newLocationMessage',function (message) {
@@ -34,13 +29,6 @@ socket.on('newLocationMessage',function (message) {
     url:message.url
   });
 $('#messages').append(html);
-  // var li=$('<li></li>');
-  // var a =$('<a target="_blank">My Current Location</a>');
-  //
-  // li.text(`${message.from} ${formattedTime}:`);
-  // a.attr('href',message.url);
-  // li.append(a);
-  // $('#messages').append(li);
 });
 
 jQuery('#message-form').on('submit',function(e){
