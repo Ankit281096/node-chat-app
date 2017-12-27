@@ -25,6 +25,13 @@ class Users {
     var namesArray=users.map((user)=> user.name);
     return namesArray;
   }
+
+  isUniqueUser (room,name) {
+    var roomUserlist=this.getUserList(room);
+    var duplicatedUser=roomUserlist.filter((user)=>user===name);
+
+    return duplicatedUser.length ? false:true;
+  }
 }
 
 module.exports={Users};

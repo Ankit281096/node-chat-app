@@ -1,5 +1,11 @@
 var socket = io();
 
+function forEach(array, callback, scope) {
+	for (let i = 0; i < array.length; i++) {
+		callback.call(scope, i, array[i]);
+    }
+}
+
 function scrollToBottom() {
   var messages=$('#messages');
   var newMessage=messages.children('li:last-child');
@@ -16,6 +22,7 @@ function scrollToBottom() {
 
 socket.on('connect',function (){
   var params= $.deparam(window.location.search);
+  params.room=params.room.toLowerCase();
 
   socket.emit('join',params,function (err) {
     if (err){
@@ -34,7 +41,7 @@ socket.on('disconnect',function (){
 socket.on('updateUserList',function (users) {
   var ol=$('<ol></ol>');
 
-  users.forEach(function (user){
+  forEach(users,function (i,user){
     ol.append($('<li></li>').text(user));
   });
 

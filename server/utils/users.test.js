@@ -76,4 +76,20 @@ beforeEach(()=>{
 
     expect(userList).toEqual(['Aniket']);
   });
+
+  it('should reject duplicated username',()=>{
+    var userName='Harshit';
+    var roomNo='Room No. 415';
+    var res=users.isUniqueUser(roomNo,userName);
+
+    expect(res).toBe(false);
+  });
+
+  it ('should accept unique name',()=>{
+    var userName='Ankit';
+    var roomNo='Room No. 415';
+    var res =users.isUniqueUser(roomNo,userName);
+
+    expect(res).toBe(true);
+  });
 });
