@@ -4,7 +4,6 @@
   padding: 0;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
-  font-size: .95rem;
 }
 
 ul, li {
@@ -19,11 +18,11 @@ h3 {
 
 button {
   border: none;
-  background: #265f82;
+  background: green;
   color: white;
   cursor: pointer;
   padding: 10px;
-  transition: background .3s ease;
+  transition: background .6s ease;
 }
 
 button:hover {
@@ -44,21 +43,16 @@ button:disabled {
   height: 100vh;
   width: 100vw;
   justify-content: center;
-  background: -moz-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(49,84,129,1)), color-stop(100%, rgba(39,107,130,1))); /* safari4+,chrome */
-  background: -webkit-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ie10+ */
-  background: linear-gradient(325deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* w3c */
+background-color: #F1F1F1;
 }
 
 .centered-form__form {
-  background: rgba(250, 250, 250, 0.9);
+  background: #EDEAE9;
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   padding: 0px 20px;
   margin: 20px;
-  width: 230px;
+  width: 55vw;
 }
 
 .form-field {
@@ -70,6 +64,7 @@ button:disabled {
 }
 
 .form-field label {
+  font-size: 16px;
   display: block;
   margin-bottom: 7px;
 }

@@ -10,29 +10,28 @@
     <div class="centered-form__form">
       <form class="" action="/chat.html">
         <div class="form-field">
-          <h3>Join a Chat</h3>
+          <h3  style="font-size:26px;" >Join a Chat</h3>
         </div>
         <div class="form-field">
-          <label>Display name</label>
+          <label><h2>Display name</h2></label>
           <input type="text" name="name" autofocus/>
         </div>
         <div class="form-field">
-          <label>Room name</label>
+          <label><h2>Room name</h2></label>
           <input type="text" name="room" />
         </div>
         <div class="form-field select-hide" id="select-room">
-          <label>Select an active room</label>
+          <label><h2>Select an active room</h2></label>
           <select id="dropdown">
               <option selected="selected">Select a room</option>
           </select>
         </div>
         <div class="form-field">
-          <button>Join</button>
+          <button style="width:150px;">Join</button>
         </div>
       </form>
     </div>
-
-        <script src="/socket.io/socket.io.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
         <script src="/js/libs/jquery-3.2.1.min.js"></script>
         <script src="/js/index.js"></script>
   </body>
